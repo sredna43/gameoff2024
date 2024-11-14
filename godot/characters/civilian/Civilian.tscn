@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://b2l3vmudt873o"]
+
+[ext_resource type="Texture2D" uid="uid://ieve28epbiph" path="res://icon.svg" id="1_gw6bw"]
+[ext_resource type="Script" path="res://characters/civilian/civilian.gd" id="1_yvucp"]
+[ext_resource type="Script" path="res://common/fsm/state_machine.gd" id="3_yovjl"]
+[ext_resource type="Script" path="res://characters/civilian/states/idle.gd" id="4_rsmjf"]
+[ext_resource type="Script" path="res://characters/civilian/states/walk.gd" id="5_mdqwk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1omiu"]
+
+[node name="Civilian" type="PathFollow2D"]
+rotates = false
+cubic_interp = false
+loop = false
+script = ExtResource("1_yvucp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_gw6bw")
+
+[node name="Area2D" type="Area2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
+scale = Vector2(5.72, 5.8)
+shape = SubResource("RectangleShape2D_1omiu")
+
+[node name="FSM" type="Node" parent="."]
+script = ExtResource("3_yovjl")
+
+[node name="Idle" type="Node" parent="FSM"]
+script = ExtResource("4_rsmjf")
+
+[node name="Walk" type="Node" parent="FSM"]
+script = ExtResource("5_mdqwk")
+
+[node name="WalkTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="IdleTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="WalkTimer" to="." method="_on_walk_timer_timeout"]
+[connection signal="timeout" from="IdleTimer" to="." method="_on_idle_timer_timeout"]

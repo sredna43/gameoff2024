@@ -1,0 +1,29 @@
+[gd_scene load_steps=7 format=3 uid="uid://cdoulvk600i22"]
+
+[ext_resource type="Script" path="res://characters/player/player.gd" id="1_blu52"]
+[ext_resource type="Texture2D" uid="uid://ieve28epbiph" path="res://icon.svg" id="2_ovti3"]
+[ext_resource type="Script" path="res://common/fsm/state_machine.gd" id="3_iteum"]
+[ext_resource type="Script" path="res://characters/player/states/idle.gd" id="4_af57p"]
+[ext_resource type="Script" path="res://characters/player/states/walk.gd" id="5_gcyfi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e5sat"]
+size = Vector2(120, 120)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_blu52")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(4.33177e-07, 0.703025, 0.210054, 1)
+texture = ExtResource("2_ovti3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_e5sat")
+
+[node name="FSM" type="Node" parent="."]
+script = ExtResource("3_iteum")
+
+[node name="Idle" type="Node" parent="FSM"]
+script = ExtResource("4_af57p")
+
+[node name="Walk" type="Node" parent="FSM"]
+script = ExtResource("5_gcyfi")
