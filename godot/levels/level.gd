@@ -11,7 +11,7 @@ func _ready():
 	for path in NPCS_NODE.get_children():
 		civilian = path.get_child(0)
 		npcs.push_back(civilian)
-		civilian.connect("told_secret", _on_npc_told_secret)
+		civilian.told_secret.connect(_on_npc_told_secret)
 
 func _on_level_won():
 	print("won level")

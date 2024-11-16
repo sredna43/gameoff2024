@@ -47,5 +47,5 @@ func _on_idle_timer_timeout() -> void:
 func _on_area_2d_body_entered(body):
 	if body is Player and knows_secret == false:
 		print("I know the secret now :)")
-		emit_signal("told_secret")
+		told_secret.emit()
 		knows_secret = true
