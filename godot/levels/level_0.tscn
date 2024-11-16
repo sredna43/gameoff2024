@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dylrp44d2lw7"]
+[gd_scene load_steps=8 format=3 uid="uid://dylrp44d2lw7"]
 
+[ext_resource type="Script" path="res://levels/level_0.gd" id="1_3lc3v"]
 [ext_resource type="PackedScene" uid="uid://b2l3vmudt873o" path="res://characters/civilian/Civilian.tscn" id="1_xmufy"]
 [ext_resource type="PackedScene" uid="uid://cdoulvk600i22" path="res://characters/player/Player.tscn" id="2_2vh4f"]
+[ext_resource type="PackedScene" uid="uid://cbcl7sweowbno" path="res://characters/head_of_sss/HeadOfSSS.tscn" id="3_5b0mk"]
 
 [sub_resource type="Curve2D" id="Curve2D_qpllw"]
 _data = {
@@ -22,10 +24,12 @@ _data = {
 point_count = 2
 
 [node name="Level0" type="Node2D"]
+script = ExtResource("1_3lc3v")
 
 [node name="NPCs" type="Node" parent="."]
 
 [node name="NPC1" type="Path2D" parent="NPCs"]
+position = Vector2(806, 123)
 curve = SubResource("Curve2D_qpllw")
 
 [node name="Civilian" parent="NPCs/NPC1" instance=ExtResource("1_xmufy")]
@@ -54,3 +58,8 @@ max_idle_time = 0.01
 min_idle_time = 0.01
 
 [node name="Player" parent="." instance=ExtResource("2_2vh4f")]
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="HeadOfSSS" parent="." instance=ExtResource("3_5b0mk")]
+position = Vector2(0, -182)
