@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5so87hs2ilw1"]
+
+[ext_resource type="PackedScene" uid="uid://b2l3vmudt873o" path="res://characters/civilian/Civilian.tscn" id="1_wjknb"]
+
+[sub_resource type="Curve2D" id="Curve2D_o7kqm"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 500)
+}
+point_count = 2
+
+[node name="RunnerDown" type="Path2D"]
+curve = SubResource("Curve2D_o7kqm")
+
+[node name="Civilian" parent="." instance=ExtResource("1_wjknb")]
+speed = 200.0
+max_walk_time = 108000.0
+min_walk_time = 108000.0
+max_idle_time = 0.01
+min_idle_time = 0.01

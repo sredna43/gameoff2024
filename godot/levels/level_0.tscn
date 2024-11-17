@@ -1,61 +1,33 @@
-[gd_scene load_steps=8 format=3 uid="uid://dylrp44d2lw7"]
+[gd_scene load_steps=9 format=3 uid="uid://dylrp44d2lw7"]
 
 [ext_resource type="Script" path="res://levels/level_0.gd" id="1_3lc3v"]
-[ext_resource type="PackedScene" uid="uid://b2l3vmudt873o" path="res://characters/civilian/Civilian.tscn" id="1_xmufy"]
 [ext_resource type="PackedScene" uid="uid://cdoulvk600i22" path="res://characters/player/Player.tscn" id="2_2vh4f"]
+[ext_resource type="PackedScene" uid="uid://daqqy6crpgaom" path="res://characters/NPCs/RunnerLeft.tscn" id="3_0y22h"]
+[ext_resource type="PackedScene" uid="uid://cui8ettx3jbkm" path="res://characters/NPCs/RunnerRight.tscn" id="3_1wpgd"]
 [ext_resource type="PackedScene" uid="uid://cbcl7sweowbno" path="res://characters/head_of_sss/HeadOfSSS.tscn" id="3_5b0mk"]
-
-[sub_resource type="Curve2D" id="Curve2D_qpllw"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 244, 321, 0, 0, 0, 0, 441, 321, 0, 0, 0, 0, 441, 192)
-}
-point_count = 3
-
-[sub_resource type="Curve2D" id="Curve2D_1uln5"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 218, 508, 0, 0, 0, 0, 735, 509)
-}
-point_count = 2
-
-[sub_resource type="Curve2D" id="Curve2D_o7kqm"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 770, 588, 0, 0, 0, 0, 212, 587)
-}
-point_count = 2
+[ext_resource type="PackedScene" uid="uid://dk7gqbxx6wqh4" path="res://characters/NPCs/WalkerRightUp.tscn" id="4_xfnqu"]
+[ext_resource type="PackedScene" uid="uid://c2x4epap1oo41" path="res://characters/NPCs/RunnerUp.tscn" id="5_1bpvj"]
+[ext_resource type="PackedScene" uid="uid://b5so87hs2ilw1" path="res://characters/NPCs/RunnerDown.tscn" id="6_nvfra"]
 
 [node name="Level0" type="Node2D"]
 script = ExtResource("1_3lc3v")
 
 [node name="NPCs" type="Node" parent="."]
 
-[node name="NPC1" type="Path2D" parent="NPCs"]
-position = Vector2(806, 123)
-curve = SubResource("Curve2D_qpllw")
+[node name="RunnerLeft" parent="NPCs" instance=ExtResource("3_0y22h")]
+position = Vector2(-102, 222)
 
-[node name="Civilian" parent="NPCs/NPC1" instance=ExtResource("1_xmufy")]
-position = Vector2(244, 321)
+[node name="RunnerRight" parent="NPCs" instance=ExtResource("3_1wpgd")]
+position = Vector2(-402, 148)
 
-[node name="NPC2" type="Path2D" parent="NPCs"]
-curve = SubResource("Curve2D_1uln5")
+[node name="WalkerRightUp" parent="NPCs" instance=ExtResource("4_xfnqu")]
+position = Vector2(-102, 577)
 
-[node name="Civilian" parent="NPCs/NPC2" instance=ExtResource("1_xmufy")]
-position = Vector2(218, 508)
-speed = 170.0
-max_walk_time = 108000.0
-min_walk_time = 108000.0
-max_idle_time = 0.01
-min_idle_time = 0.01
+[node name="RunnerUp" parent="NPCs" instance=ExtResource("5_1bpvj")]
+position = Vector2(675, -343)
 
-[node name="NPC3" type="Path2D" parent="NPCs"]
-curve = SubResource("Curve2D_o7kqm")
-
-[node name="Civilian2" parent="NPCs/NPC3" instance=ExtResource("1_xmufy")]
-position = Vector2(770, 588)
-speed = 170.0
-max_walk_time = 108000.0
-min_walk_time = 108000.0
-max_idle_time = 0.01
-min_idle_time = 0.01
+[node name="RunnerDown" parent="NPCs" instance=ExtResource("6_nvfra")]
+position = Vector2(955, -323)
 
 [node name="Player" parent="." instance=ExtResource("2_2vh4f")]
 

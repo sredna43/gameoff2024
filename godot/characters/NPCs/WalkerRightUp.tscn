@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dk7gqbxx6wqh4"]
+
+[ext_resource type="PackedScene" uid="uid://b2l3vmudt873o" path="res://characters/civilian/Civilian.tscn" id="1_8abpk"]
+
+[sub_resource type="Curve2D" id="Curve2D_qpllw"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 250, 0, 0, 0, 0, 0, 250, -250)
+}
+point_count = 3
+
+[node name="WalkerRightUp" type="Path2D"]
+curve = SubResource("Curve2D_qpllw")
+
+[node name="Civilian" parent="." instance=ExtResource("1_8abpk")]

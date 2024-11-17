@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://cdoulvk600i22"]
+[gd_scene load_steps=9 format=3 uid="uid://cdoulvk600i22"]
 
 [ext_resource type="Script" path="res://characters/player/player.gd" id="1_blu52"]
 [ext_resource type="Texture2D" uid="uid://ieve28epbiph" path="res://icon.svg" id="2_ovti3"]
 [ext_resource type="Script" path="res://common/fsm/state_machine.gd" id="3_iteum"]
 [ext_resource type="Script" path="res://characters/player/states/idle.gd" id="4_af57p"]
 [ext_resource type="Script" path="res://characters/player/states/walk.gd" id="5_gcyfi"]
+[ext_resource type="Script" path="res://characters/player/states/custcene.gd" id="6_sxwu4"]
+[ext_resource type="Script" path="res://characters/player/states/dash.gd" id="7_3q2v2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e5sat"]
 size = Vector2(120, 120)
@@ -22,8 +24,25 @@ shape = SubResource("RectangleShape2D_e5sat")
 [node name="FSM" type="Node" parent="."]
 script = ExtResource("3_iteum")
 
+[node name="Custcene" type="Node" parent="FSM"]
+script = ExtResource("6_sxwu4")
+
 [node name="Idle" type="Node" parent="FSM"]
 script = ExtResource("4_af57p")
 
 [node name="Walk" type="Node" parent="FSM"]
 script = ExtResource("5_gcyfi")
+
+[node name="Dash" type="Node" parent="FSM"]
+script = ExtResource("7_3q2v2")
+
+[node name="DashTimer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
+[node name="Debug" type="Label" parent="."]
+offset_left = -23.0
+offset_top = -91.0
+offset_right = 26.0
+offset_bottom = -68.0
+text = "debug"

@@ -14,15 +14,24 @@ const intro_text = [
 @onready var player: Player = $Player
 
 var on_dialogue_line = 0
+var in_dialogue = true
+
+func exit_cutscene():
+	player.exit_cutscene()
+	in_dialogue = false
 
 func next_dialogue():
+	if !in_dialogue:
+		return
 	on_dialogue_line = min(on_dialogue_line + 1, intro_text.size() - 1)
 	print(intro_text[on_dialogue_line])
 	if on_dialogue_line == intro_text.size() - 1:
-		player.exit_cutscene()
+		exit_cutscene()
 
 func skip_dialogue():
-	player.exit_cutscene()
+	on_dialogue_line = intro_text.size() - 1
+	print(intro_text[on_dialogue_line])
+	exit_cutscene()
 
 
 func _ready():

@@ -12,3 +12,8 @@ func _ready() -> void:
 
 func _physics_process(_delta: float) -> void:
 	input = Input.get_vector("left", "right", "up", "down", 0.3)
+
+func run(delta) -> String:
+	if player.in_cutscene:
+		return "Cutscene"
+	return super(delta)
