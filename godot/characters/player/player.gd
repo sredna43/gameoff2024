@@ -7,6 +7,7 @@ const dash_speed = 2000
 @onready var fsm: StateMachine = $FSM
 @onready var dash_timer: Timer = $DashTimer
 @onready var debug: Label = $Debug
+@onready var hud: HUD = $CanvasLayer/HUD
 
 var in_cutscene = false
 

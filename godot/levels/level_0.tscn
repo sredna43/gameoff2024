@@ -29,11 +29,8 @@ position = Vector2(675, -343)
 [node name="RunnerDown" parent="NPCs" instance=ExtResource("6_nvfra")]
 position = Vector2(955, -323)
 
-[node name="Player" parent="." instance=ExtResource("2_2vh4f")]
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
-
 [node name="HeadOfSSS" parent="." instance=ExtResource("3_5b0mk")]
 position = Vector2(0, -182)
+
+[node name="Player" parent="." instance=ExtResource("2_2vh4f")]
+position = Vector2(-4, -17)

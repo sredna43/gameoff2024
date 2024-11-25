@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cdoulvk600i22"]
+[gd_scene load_steps=10 format=3 uid="uid://cdoulvk600i22"]
 
 [ext_resource type="Script" path="res://characters/player/player.gd" id="1_blu52"]
 [ext_resource type="Texture2D" uid="uid://ieve28epbiph" path="res://icon.svg" id="2_ovti3"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://characters/player/states/walk.gd" id="5_gcyfi"]
 [ext_resource type="Script" path="res://characters/player/states/custcene.gd" id="6_sxwu4"]
 [ext_resource type="Script" path="res://characters/player/states/dash.gd" id="7_3q2v2"]
+[ext_resource type="PackedScene" uid="uid://cdiji368afcpo" path="res://hud/HUD.tscn" id="8_k8n5a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e5sat"]
 size = Vector2(120, 120)
@@ -46,3 +47,9 @@ offset_top = -91.0
 offset_right = 26.0
 offset_bottom = -68.0
 text = "debug"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="CanvasLayer" instance=ExtResource("8_k8n5a")]
