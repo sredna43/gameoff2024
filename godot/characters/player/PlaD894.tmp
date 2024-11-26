@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://cdoulvk600i22"]
+[gd_scene load_steps=20 format=3 uid="uid://cdoulvk600i22"]
 
 [ext_resource type="Script" path="res://characters/player/player.gd" id="1_blu52"]
 [ext_resource type="Texture2D" uid="uid://byh8wwaut23pa" path="res://characters/player/assets/foot.PNG" id="2_iohje"]
@@ -456,9 +456,8 @@ tracks/17/keys = {
 
 [sub_resource type="Animation" id="Animation_e0owu"]
 resource_name = "Walk"
-length = 0.6
 loop_mode = 1
-step = 0.15
+step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -466,7 +465,7 @@ tracks/0/path = NodePath("Sprites/Skeleton2D/RootBone:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.142857, 0.428571),
+"times": PackedFloat32Array(0, 0.25, 0.75),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(1, 41), Vector2(1, 41), Vector2(1, 41)]
@@ -478,7 +477,7 @@ tracks/1/path = NodePath("Sprites/Skeleton2D/RootBone:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.142857, 0.428571),
+"times": PackedFloat32Array(0, 0.25, 0.75),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [0.0, 0.0, 0.0]
@@ -490,7 +489,7 @@ tracks/2/path = NodePath("Sprites/Skeleton2D/RootBone:scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.142857, 0.428571),
+"times": PackedFloat32Array(0, 0.25, 0.75),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)]
@@ -502,7 +501,7 @@ tracks/3/path = NodePath("Sprites/Skeleton2D/RootBone/BodyBone:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.142857, 0.285714, 0.428571),
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(0, 0), Vector2(0, -10), Vector2(0, 4), Vector2(0, -8)]
@@ -514,7 +513,7 @@ tracks/4/path = NodePath("Sprites/Skeleton2D/RootBone/BodyBone:rotation")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.142857, 0.285714, 0.428571),
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [0.0, 0.137881, 0.0, -0.0698132]
@@ -526,7 +525,7 @@ tracks/5/path = NodePath("Sprites/Skeleton2D/RootBone/BodyBone:scale")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.142857, 0.285714, 0.428571),
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(0.2, 0.2), Vector2(0.2, 0.2), Vector2(0.2, 0.2), Vector2(0.2, 0.2)]
@@ -538,7 +537,7 @@ tracks/6/path = NodePath("Sprites/Skeleton2D/RootBone/BodyBone/Body:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 0.142857, 0.428571),
+"times": PackedFloat32Array(0, 0.25, 0.75),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, 0)]
@@ -550,7 +549,7 @@ tracks/7/path = NodePath("Sprites/Skeleton2D/RootBone/BodyBone/Body:rotation")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0, 0.142857, 0.428571),
+"times": PackedFloat32Array(0, 0.25, 0.75),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [0.0, 0.0, 0.0]
@@ -562,7 +561,7 @@ tracks/8/path = NodePath("Sprites/Skeleton2D/RootBone/BodyBone/Body:scale")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0, 0.142857, 0.428571),
+"times": PackedFloat32Array(0, 0.25, 0.75),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)]
@@ -574,7 +573,7 @@ tracks/9/path = NodePath("Sprites/Skeleton2D/RootBone/BodyBone/FaceBone:position
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(0, 0.142857, 0.428571),
+"times": PackedFloat32Array(0, 0.25, 0.75),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(95, -270), Vector2(95, -270), Vector2(95, -270)]
@@ -586,7 +585,7 @@ tracks/10/path = NodePath("Sprites/Skeleton2D/RootBone/BodyBone/FaceBone:rotatio
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(0, 0.142857, 0.428571),
+"times": PackedFloat32Array(0, 0.25, 0.75),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [0.0, 0.0, 0.0]
@@ -598,7 +597,7 @@ tracks/11/path = NodePath("Sprites/Skeleton2D/RootBone/BodyBone/FaceBone:scale")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
-"times": PackedFloat32Array(0, 0.142857, 0.428571),
+"times": PackedFloat32Array(0, 0.25, 0.75),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)]
@@ -610,7 +609,7 @@ tracks/12/path = NodePath("Sprites/Skeleton2D/RootBone/BackFootBone:position")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
-"times": PackedFloat32Array(0, 0.142857, 0.285714, 0.428571),
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(35, 19), Vector2(-1, 19), Vector2(-37, 19), Vector2(-4, 6)]
@@ -622,7 +621,7 @@ tracks/13/path = NodePath("Sprites/Skeleton2D/RootBone/BackFootBone:rotation")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
-"times": PackedFloat32Array(0, 0.142857, 0.285714, 0.428571),
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [0.0, 0.0, 0.0, 0.0]
@@ -634,7 +633,7 @@ tracks/14/path = NodePath("Sprites/Skeleton2D/RootBone/BackFootBone:scale")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
-"times": PackedFloat32Array(0, 0.142857, 0.285714, 0.428571),
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(0.2, 0.2), Vector2(0.2, 0.2), Vector2(0.2, 0.2), Vector2(0.2, 0.2)]
@@ -646,7 +645,7 @@ tracks/15/path = NodePath("Sprites/Skeleton2D/RootBone/TopFootBone:position")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
-"times": PackedFloat32Array(0, 0.142857, 0.285714, 0.428571),
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(-33, 19), Vector2(22, 9), Vector2(44, 21), Vector2(2, 21)]
@@ -658,7 +657,7 @@ tracks/16/path = NodePath("Sprites/Skeleton2D/RootBone/TopFootBone:rotation")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
-"times": PackedFloat32Array(0, 0.142857, 0.285714, 0.428571),
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [0.0, 0.0, 0.0, 0.0]
@@ -670,7 +669,7 @@ tracks/17/path = NodePath("Sprites/Skeleton2D/RootBone/TopFootBone:scale")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
-"times": PackedFloat32Array(0, 0.142857, 0.285714, 0.428571),
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(0.2, 0.2), Vector2(0.2, 0.2), Vector2(0.2, 0.2), Vector2(0.2, 0.2)]
@@ -683,46 +682,24 @@ _data = {
 "Walk": SubResource("Animation_e0owu")
 }
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fm8no"]
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_0cqct"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_bx01u"]
 animation = &"Idle"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pf327"]
-animation = &"Idle"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_j55y7"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xajpy"]
 animation = &"Walk"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_v1n84"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3dm6p"]
-xfade_time = 0.3
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_t5a88"]
-xfade_time = 0.4
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_knt5l"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_nu1ec"]
-
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_p6t6t"]
-states/End/position = Vector2(1138.86, 92.894)
-states/Idle/node = SubResource("AnimationNodeAnimation_pf327")
-states/Idle/position = Vector2(420, 93.4169)
-"states/Idle 2/node" = SubResource("AnimationNodeAnimation_fm8no")
-"states/Idle 2/position" = Vector2(919.286, 91.7775)
-states/Start/position = Vector2(216, 99.2653)
-states/Walk/node = SubResource("AnimationNodeAnimation_j55y7")
-states/Walk/position = Vector2(670.857, 93.499)
-transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_v1n84"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_3dm6p"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_t5a88"), "Walk", "Idle 2", SubResource("AnimationNodeStateMachineTransition_knt5l"), "Idle 2", "End", SubResource("AnimationNodeStateMachineTransition_nu1ec")]
-graph_offset = Vector2(-211, 2)
-
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_f38h4"]
-graph_offset = Vector2(-353.355, 73.8046)
-nodes/StateMachine/node = SubResource("AnimationNodeStateMachine_p6t6t")
-nodes/StateMachine/position = Vector2(91.4286, 262.857)
-nodes/output/position = Vector2(331.429, 262.857)
-node_connections = [&"output", 0, &"StateMachine"]
+graph_offset = Vector2(-325.742, 71.5905)
+nodes/Blend2/node = SubResource("AnimationNodeBlend2_0cqct")
+nodes/Blend2/position = Vector2(525.714, 148.571)
+nodes/Idle/node = SubResource("AnimationNodeAnimation_bx01u")
+nodes/Idle/position = Vector2(354.286, 114.286)
+nodes/Walk/node = SubResource("AnimationNodeAnimation_xajpy")
+nodes/Walk/position = Vector2(354.286, 251.429)
+nodes/output/position = Vector2(777.143, 160)
+node_connections = [&"Blend2", 0, &"Idle", &"Blend2", 1, &"Walk", &"output", 0, &"Blend2"]
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_blu52")
@@ -757,10 +734,6 @@ offset_bottom = -68.0
 text = "debug"
 
 [node name="Camera2D" type="Camera2D" parent="."]
-limit_left = 0
-limit_top = 0
-limit_right = 3508
-limit_bottom = 2480
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -793,7 +766,7 @@ offset = Vector2(-10, -240)
 [node name="FaceBone" type="Bone2D" parent="Sprites/Skeleton2D/RootBone/BodyBone"]
 position = Vector2(80, -255)
 scale = Vector2(1, 1)
-rest = Transform2D(1, 0, 0, 1, 80, -255)
+rest = Transform2D(1, 0, 0, 1, 95, -270)
 
 [node name="Face" type="Sprite2D" parent="Sprites/Skeleton2D/RootBone/BodyBone/FaceBone"]
 texture = ExtResource("4_jd0tx")
@@ -822,3 +795,4 @@ libraries = {
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeBlendTree_f38h4")
 anim_player = NodePath("../AnimationPlayer")
+parameters/Blend2/blend_amount = 0.0

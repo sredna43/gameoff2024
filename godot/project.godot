@@ -19,10 +19,22 @@ config/icon="res://icon.svg"
 
 Globals="*res://common/globals.gd"
 
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/stretch/mode="viewport"
+
 [editor]
 
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
+
+[file_customization]
+
+folder_colors={
+"res://characters/player/": "blue"
+}
 
 [input]
 

@@ -6,6 +6,7 @@ signal told_secret
 @onready var fsm: StateMachine = $FSM
 @onready var walk_timer: Timer = $WalkTimer
 @onready var idle_timer: Timer = $IdleTimer
+@onready var sprite: Sprite2D = $Sprite2D
 
 @export var speed: float = 100
 @export var max_walk_time: float = 2.0
@@ -30,10 +31,12 @@ func _ready() -> void:
 		path = parent as Path2D
 		assert(path != null, "Civilians must be children of Path2Ds")
 		path_len = path.curve.get_baked_length()
+	sprite.self_modulate = "#ffffff"
 
 
 func _physics_process(delta: float) -> void:
-	fsm.run(delta)
+	if !Globals.npcs_paused:
+		fsm.run(delta)
 
 
 func _on_walk_timer_timeout() -> void:
@@ -49,3 +52,4 @@ func _on_area_2d_body_entered(body):
 		print("I know the secret now :)")
 		told_secret.emit()
 		knows_secret = true
+		sprite.self_modulate = "#69d8e7"

@@ -22,6 +22,7 @@ func enter_cutscene():
 func exit_cutscene():
 	player.exit_cutscene()
 	in_dialogue = false
+	Globals.npcs_paused = false
 
 func next_dialogue():
 	if !in_dialogue:
@@ -32,6 +33,8 @@ func next_dialogue():
 		exit_cutscene()
 
 func skip_dialogue():
+	if not in_dialogue:
+		return
 	on_dialogue_line = text.size() - 1
 	print(text[on_dialogue_line])
 	exit_cutscene()

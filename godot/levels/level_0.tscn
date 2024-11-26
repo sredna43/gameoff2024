@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dylrp44d2lw7"]
+[gd_scene load_steps=14 format=3 uid="uid://dylrp44d2lw7"]
 
 [ext_resource type="Script" path="res://levels/level_0.gd" id="1_3lc3v"]
 [ext_resource type="PackedScene" uid="uid://cdoulvk600i22" path="res://characters/player/Player.tscn" id="2_2vh4f"]
+[ext_resource type="Texture2D" uid="uid://biocdp8n3s6kf" path="res://levels/assets/bg.png" id="2_12rdc"]
 [ext_resource type="PackedScene" uid="uid://daqqy6crpgaom" path="res://characters/NPCs/RunnerLeft.tscn" id="3_0y22h"]
 [ext_resource type="PackedScene" uid="uid://cui8ettx3jbkm" path="res://characters/NPCs/RunnerRight.tscn" id="3_1wpgd"]
 [ext_resource type="PackedScene" uid="uid://cbcl7sweowbno" path="res://characters/head_of_sss/HeadOfSSS.tscn" id="3_5b0mk"]
@@ -9,28 +10,71 @@
 [ext_resource type="PackedScene" uid="uid://c2x4epap1oo41" path="res://characters/NPCs/RunnerUp.tscn" id="5_1bpvj"]
 [ext_resource type="PackedScene" uid="uid://b5so87hs2ilw1" path="res://characters/NPCs/RunnerDown.tscn" id="6_nvfra"]
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gqdi4"]
+normal = Vector2(0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ame1u"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_t3hfr"]
+normal = Vector2(-1, 0)
+distance = -3508.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8iy82"]
+distance = -2480.0
+
 [node name="Level0" type="Node2D"]
 script = ExtResource("1_3lc3v")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_12rdc")
 
 [node name="NPCs" type="Node" parent="."]
 
 [node name="RunnerLeft" parent="NPCs" instance=ExtResource("3_0y22h")]
-position = Vector2(-102, 222)
+position = Vector2(257, 418)
 
 [node name="RunnerRight" parent="NPCs" instance=ExtResource("3_1wpgd")]
-position = Vector2(-402, 148)
+position = Vector2(2846, 2119)
 
 [node name="WalkerRightUp" parent="NPCs" instance=ExtResource("4_xfnqu")]
-position = Vector2(-102, 577)
+position = Vector2(2054, 1512)
 
 [node name="RunnerUp" parent="NPCs" instance=ExtResource("5_1bpvj")]
-position = Vector2(675, -343)
+position = Vector2(759, 1720)
 
 [node name="RunnerDown" parent="NPCs" instance=ExtResource("6_nvfra")]
-position = Vector2(955, -323)
+position = Vector2(2287, 335)
+
+[node name="WalkerRightUp2" parent="NPCs" instance=ExtResource("4_xfnqu")]
+position = Vector2(904, 2277)
 
 [node name="HeadOfSSS" parent="." instance=ExtResource("3_5b0mk")]
-position = Vector2(0, -182)
+position = Vector2(1522, 1264)
 
 [node name="Player" parent="." instance=ExtResource("2_2vh4f")]
-position = Vector2(-4, -17)
+position = Vector2(1513, 1418)
+
+[node name="Borders" type="Node2D" parent="."]
+
+[node name="Top" type="StaticBody2D" parent="Borders"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/Top"]
+shape = SubResource("WorldBoundaryShape2D_gqdi4")
+
+[node name="Left" type="StaticBody2D" parent="Borders"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/Left"]
+shape = SubResource("WorldBoundaryShape2D_ame1u")
+
+[node name="Right" type="StaticBody2D" parent="Borders"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/Right"]
+shape = SubResource("WorldBoundaryShape2D_t3hfr")
+
+[node name="Bottom" type="StaticBody2D" parent="Borders"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/Bottom"]
+shape = SubResource("WorldBoundaryShape2D_8iy82")

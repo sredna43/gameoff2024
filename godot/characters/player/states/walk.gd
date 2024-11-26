@@ -1,5 +1,9 @@
 extends PlayerState
 
+func enter():
+	player.anim_sm.travel("Walk")
+	super()
+
 func run(delta: float) -> String:
 	if input.is_zero_approx():
 		return "Idle"
