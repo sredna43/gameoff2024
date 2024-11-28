@@ -725,6 +725,7 @@ nodes/output/position = Vector2(331.429, 262.857)
 node_connections = [&"output", 0, &"StateMachine"]
 
 [node name="Player" type="CharacterBody2D"]
+scale = Vector2(0.7, 0.7)
 script = ExtResource("1_blu52")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -757,10 +758,11 @@ offset_bottom = -68.0
 text = "debug"
 
 [node name="Camera2D" type="Camera2D" parent="."]
-limit_left = 0
+zoom = Vector2(1.15, 1.15)
+limit_left = 270
 limit_top = 0
-limit_right = 3508
-limit_bottom = 2480
+limit_right = 9170
+limit_bottom = 5445
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
